@@ -1,3 +1,4 @@
+require 'colorize'
 require 'pry'
 
 # Numbers from http://www.theasciicode.com.ar/
@@ -24,7 +25,7 @@ require 'pry'
 
 def post_input
   @input.each do | x |
-    print "#{x.ord} "
+    print "#{x.ord} ".light_blue
   end
   puts "\n\n"
 end
@@ -34,7 +35,7 @@ def post_asc
   puts 'Post Ascending'
   asc_input = @input.sort_by {|k, v| v}
   asc_input.each do | x |
-    print "#{x.ord} "
+    print "#{x.ord} ".green
   end
   puts "\n\n"
 end
@@ -66,28 +67,26 @@ end
 
 def menu
   puts '--- Welcome to The Letters Challenge ---'
-  print 'Please input a list of letters (space seperated): '
+  print 'Please input a list of letters (space seperated): '.green
   print '> '
   @input = gets.strip.split(" ")
   post_input
   
-  puts 'Sort output? Y/n'
-  puts 'Q to quit'
+  puts 'Sort output? Y/n'.green
+  puts 'Q to quit'.red
   choice = gets.strip.downcase
   
   case choice
     when 'y'
-      puts 'Chose y'
       asc_desc
       menu
     when 'n'
-      puts 'Chose n'
       menu
     when 'q'
-      puts 'Thanks for using this program!'
+      puts 'Thanks for using this program!'.green
       exit
     else
-      puts 'Invalid input. Please try again.'
+      puts "Invalid input. Please try again.\n".red
       menu
   end
 
