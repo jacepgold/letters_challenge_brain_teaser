@@ -81,3 +81,6 @@ build-iPhoneSimulator/
 .rvmrc
 
 # End of https://www.gitignore.io/api/osx,ruby
+
+letters_challenge.html
+josh-version.rb
