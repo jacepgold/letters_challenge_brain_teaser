@@ -52,6 +52,7 @@ def menu
   
   puts 'Sort output? Y/n'.green
   puts 'Q to quit'.red
+  print '> '
   choice = gets.strip.downcase
   
   case choice
